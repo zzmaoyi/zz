@@ -1,1 +1,54 @@
-<h1>hello man</h1>
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>中族·承源</title>
+<link href="bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+<h1>正在加载请稍后...</h1>
+
+
+
+<div id="ss"></div><div id="loading"></div>
+
+
+    <script src="config.js"></script>    
+    <script src="react.min.js"></script>
+    <script src="jquery.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+   <script> 
+
+document.write("<div class='.col-md-8'>加载前</div>");
+loadScript("http://"+service.ip+":"+service.port+"/JcArt/app.js?t="+(new Date()).getTime(),function(){ $("body").append("ok加载完毕");});
+//document.write("<script onload='alert(6)'  src='http://"+service.ip+":"+service.port+"/JcArt/app.js'><\/script>");
+function loadScript(url, callback){ 
+var script = document.createElement("script") 
+script.type = "text/javascript"; 
+if (script.readyState){ //IE 
+script.onreadystatechange = function(){ 
+if (script.readyState == "loaded" || 
+script.readyState == "complete"){ 
+script.onreadystatechange = null; 
+callback(); 
+} 
+}; 
+} else { //Others: Firefox, Safari, Chrome, and Opera 
+script.onload = function(){ 
+callback(); 
+}; 
+} 
+script.src = url; 
+document.body.appendChild(script); 
+} 
+
+
+ </script>
+
+
+
+  </body>
+</html>
